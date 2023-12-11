@@ -52,7 +52,7 @@ export function DeleteModal() {
             <span>Cancel</span>
           </Button>
 
-          <Button type="submit" size="sm" className="px-3 flex-1" onClick={() => deleteFile()}>
+          <Button type="submit" variant={"destructive"} size="sm" className="px-3 flex-1" onClick={() => deleteFile()}>
             <span className="sr-only">Delete</span>
             <span>Delete</span>
           </Button>
