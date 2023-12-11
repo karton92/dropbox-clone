@@ -7,10 +7,12 @@ import { addDoc, collection, serverTimestamp, updateDoc, doc } from "firebase/fi
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import React, { useState } from "react";
 import Dropzone from "react-dropzone";
+import { useToast } from "@/components/ui/use-toast";
 
 const DropzoneComponent = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const { isLoaded, isSignedIn, user } = useUser();
+  const { toast } = useToast();
 
   const onDrop = (acceptedFiles: File[]) => {
     acceptedFiles.forEach((file) => {
@@ -53,6 +55,10 @@ const DropzoneComponent = () => {
     });
 
     setLoading(false);
+    toast({
+      title: "File upload",
+      description: "File upload is succesful!",
+    });
   };
 
   // max file size 20mb

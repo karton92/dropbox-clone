@@ -7,10 +7,12 @@ import React, { useState } from "react";
 import { Input } from "./input";
 import { updateDoc, doc } from "firebase/firestore";
 import { db } from "@/firebase";
+import { useToast } from "@/components/ui/use-toast";
 
 const RenameModal = () => {
   const { user } = useUser();
   const [input, setInput] = useState("");
+  const { toast } = useToast();
   const [isRenameModalOpen, setIsRenameModalOpen, fileId, filename] = useAppStore((state) => [
     state.isRenameModalOpen,
     state.setIsRenameModalOpen,
@@ -26,6 +28,10 @@ const RenameModal = () => {
     });
     setInput("");
     setIsRenameModalOpen(false);
+    toast({
+      title: "Rename file",
+      description: "Rename file succesful!",
+    });
   };
   return (
     <Dialog
