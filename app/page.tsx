@@ -1,14 +1,11 @@
-import Image from "next/image";
-import { UserButton } from "@clerk/nextjs";
-import Header from "@/components/Header";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function Home() {
   return (
     <main className="">
-      <div className="flex flex-col lg:flex-row items-center bg-gray-600 dark:bg-slate-800">
-        <div className="p-10 flex flex-col bg-gray-600 dark:bg-slate-800 text-white space-y-5">
+      <div className="flex flex-col lg:flex-row items-center bg-gray-600 dark:bg-[#2d4b4d]">
+        <div className="p-10 flex flex-col bg-gray-600 dark:bg-[#2d4b4d] text-white space-y-5">
           <h1 className="text-5xl font-bold mb-5">Welcome to Dropbox</h1>
           <h2 className="text-3xl font-bold">Storing everything for you and your business needs. All in one place</h2>
           <p className="pb-20">
@@ -17,7 +14,7 @@ export default function Home() {
             solution.
           </p>
 
-          <Link href="/dashboard" className="flex bg-blue-500 p-3 w-fit">
+          <Link href="/dashboard" className="flex bg-blue-500 dark:bg-[#147758] p-3 w-fit">
             Try it for free
             <ArrowRight className="ml-6" />
           </Link>

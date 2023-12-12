@@ -75,7 +75,9 @@ const DropzoneComponent = () => {
                 {...getRootProps()}
                 className={cn(
                   "w-full h-52 flex justify-center items-center p-5 border border-dashed rounded-lg text-center",
-                  isDragActive ? "bg-[#035FFE] text-whit animate-pulse" : "bg-slate-100/50 dark:bg-slate-800/80 text-slate-400"
+                  isDragActive
+                    ? "bg-[#0160FE] dark:bg-[#147758] text-whit animate-pulse"
+                    : "bg-slate-100/50 dark:bg-[#4a6661] text-slate-500 dark:text-slate-300"
                 )}
               >
                 <input {...getInputProps()} />
